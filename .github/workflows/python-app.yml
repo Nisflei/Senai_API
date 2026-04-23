@@ -31,4 +31,4 @@ jobs:
                
        - name: Teste do APP
          run: |
-             PYTHONPATH=. pytest tests/ -v --tb=short
+             PYTHONPATH=. pytest test/ -v --tb=short
