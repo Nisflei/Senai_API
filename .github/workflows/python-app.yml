@@ -17,7 +17,7 @@ jobs:
        - name: Set up Python 3.10
          uses: actions/setup-python@v3
          with:
-            python-version: "3.10"
+            python-version: "3.11"
     
        - name: Install dependencies
          run: |
@@ -39,5 +39,7 @@ jobs:
     needs: BUILD
     steps:
       - name: Login no Docker
-        run: echo "fazer em aula"
-   
+        uses: docker/login-action@v4.1.0
+        with:
+          username: ${{secrets.DOCKER_USUARIO}}
+          password: ${{secrets.DOCKER_PWD}}
